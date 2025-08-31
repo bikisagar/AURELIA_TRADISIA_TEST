@@ -5,7 +5,7 @@ backend:
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
-site_url: "https://yourdomain.com"
+site_url: "radiant-pothos-ed52f9.netlify.app"
 logo_url: "/images/logo.svg"
 
 collections:
