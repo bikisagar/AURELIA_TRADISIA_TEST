@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact | Aurelia Tradisia</title>
+  <meta name="description" content="Start a brief or request a proposal for curated sculpture for hospitality." />
+  <link rel="canonical" href="https://yourdomain.com/contact.html" />
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta property="og:title" content="Contact | Aurelia Tradisia" />
+  <meta property="og:description" content="Let’s curate a distinctive sculptural story for your space." />
+  <meta property="og:image" content="images/og-image.jpg" />
+  <meta name="theme-color" content="#6366f1" />
+  <link rel="icon" href="images/favicon.ico" />
+</head>
+<body>
+  <header id="navbar" class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo"><a href="index.html">Aurelia <span class="gradient-text">Tradisia</span></a></div>
+      <nav>
+        <ul id="nav-menu" class="nav-menu">
+          <li><a class="nav-link" href="index.html#home">Home</a></li>
+          <li><a class="nav-link" href="about.html">About</a></li>
+          <li><a class="nav-link" href="services.html">Services</a></li>
+          <li><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+          <li><a class="nav-link active" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div id="mobile-menu" class="nav-toggle" aria-label="Menu" role="button">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" style="min-height:40vh;">
+    <div class="hero-container">
+      <div>
+        <h1 class="hero-title">Let’s Curate Your Next Landmark</h1>
+        <p class="hero-description">Share your brief—location, timeline, budget window—and we’ll respond with a tailored curation pathway.</p>
+        <div class="hero-buttons">
+          <a href="#form" class="btn btn-primary">Contact Form</a>
+          <a href="mailto:hello@aureliatradisia.com" class="btn btn-secondary">Email Us</a>
+        </div>
+      </div>
+      <div class="image-placeholder">
+        <div class="placeholder-content">
+          <div class="placeholder-icon">✉️</div>
+          <p>We typically respond within 1–2 business days.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="form" class="contact">
+    <div class="container contact-content">
+      <div class="contact-info">
+        <h3>Contact Details</h3>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <h4>Europe</h4>
+            <p>Installations across EU. Local number on request.</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🏛️</div>
+          <div>
+            <h4>India</h4>
+            <p>Guwahati, Assam — Artisan partnerships & curation studio.</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📧</div>
+          <div>
+            <h4>Email</h4>
+            <p>hello@aureliatradisia.com</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3>Send a Message</h3>
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Work Email</label>
+            <input id="email" name="email" type="email" placeholder="you@hotel.com" required />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input id="subject" name="subject" type="text" placeholder="Brief / Proposal / Inquiry" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us about your space and timeline…" required></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Send Message</button>
+        </form>
+        <p class="mb-0" style="margin-top:12px;font-size:0.9rem;color:#6b7280;">By submitting, you agree to our <a href="privacy.html">Privacy Policy</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <section class="footer-section">
+        <h3>Aurelia Tradisia</h3>
+        <p>Crafted in India, curated for Europe.</p>
+      </section>
+      <section class="footer-section">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="404.html">404</a></li>
+        </ul>
+      </section>
+      <section class="footer-section">
+        <h4>Sitemap</h4>
+        <ul>
+          <li><a href="sitemap.xml">sitemap.xml</a></li>
+          <li><a href="robots.txt">robots.txt</a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Aurelia Tradisia.</p>
+    </div>
+  </footer>
+
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">↑</button>
+  <script src="js/script.js" defer></script>
+</body>
+</html>
