@@ -9,7 +9,7 @@ base_url: https://aureliatradisia.in
 media_folder: "images/uploads"    # Folder in repo where uploaded files are stored
 public_folder: "/images/uploads"  # Public URL path for uploaded media
 
-site_url: "https://your-domain.com"
+site_url: "https://aureliatradisia.in
 logo_url: "/images/logo.svg"
 
 collections:
