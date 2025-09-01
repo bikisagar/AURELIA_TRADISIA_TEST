@@ -1,10 +1,10 @@
 backend:
   name: github
-  repo: YOUR_GITHUB_USERNAME/YOUR_REPO_NAME   # e.g. jyotirmoy/aurelia-tradisia
+  repo: bikisagar/AURELIA_TRADISIA_TEST   # e.g. jyotirmoy/aurelia-tradisia
   branch: main
 
 # OAuth application callback URL (must match GitHub OAuth app setup)
-base_url: https://your-domain.com
+base_url: https://aureliatradisia.in
 
 media_folder: "images/uploads"    # Folder in repo where uploaded files are stored
 public_folder: "/images/uploads"  # Public URL path for uploaded media
