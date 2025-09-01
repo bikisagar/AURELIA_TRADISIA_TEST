@@ -1,11 +1,15 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: YOUR_GITHUB_USERNAME/YOUR_REPO_NAME   # e.g. jyotirmoy/aurelia-tradisia
   branch: main
 
-media_folder: "images/uploads"
-public_folder: "/images/uploads"
+# OAuth application callback URL (must match GitHub OAuth app setup)
+base_url: https://your-domain.com
 
-site_url: "radiant-pothos-ed52f9.netlify.app"
+media_folder: "images/uploads"    # Folder in repo where uploaded files are stored
+public_folder: "/images/uploads"  # Public URL path for uploaded media
+
+site_url: "https://your-domain.com"
 logo_url: "/images/logo.svg"
 
 collections:
@@ -13,42 +17,36 @@ collections:
     label: "Pages"
     files:
       - file: "index.html"
-        label: "Home"
+        label: "Home Page"
         name: "home"
         fields:
-          - { label: Title, name: title, widget: string }
-          - { label: Hero Heading, name: hero_heading, widget: string }
-          - { label: Hero Description, name: hero_desc, widget: text }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
       - file: "about.html"
-        label: "About"
+        label: "About Page"
         name: "about"
         fields:
-          - { label: Title, name: title, widget: string }
-          - { label: Intro, name: intro, widget: text }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
       - file: "services.html"
-        label: "Services"
+        label: "Services Page"
         name: "services"
         fields:
-          - { label: Title, name: title, widget: string }
-          - { label: Subheading, name: subheading, widget: string }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - file: "portfolio.html"
+        label: "Portfolio Page"
+        name: "portfolio"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
       - file: "contact.html"
-        label: "Contact"
+        label: "Contact Page"
         name: "contact"
         fields:
-          - { label: Title, name: title, widget: string }
-          - { label: Intro, name: intro, widget: text }
-
-  - name: "portfolio"
-    label: "Portfolio"
-    folder: "content/portfolio"
-    create: true
-    slug: "{{slug}}"
-    extension: "json"
-    media_folder: ""
-    public_folder: ""
-    fields:
-      - { label: Title, name: title, widget: string }
-      - { label: Location, name: location, widget: string, required: false }
-      - { label: Materials, name: materials, widget: list, required: false }
-      - { label: Description, name: description, widget: text }
-      - { label: Images, name: images, widget: list, fields: [ {label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string} ] }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
