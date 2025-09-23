@@ -4,7 +4,7 @@
     "tagline": "Curated Indian Sculptures of Exceptional Merit",
     "description": "Aurelia Tradisia curates exceptional Indian sculptures in wood, bronze, brass, and marble. Museum-grade craftsmanship for discerning collectors.",
     "keywords": "Indian sculptures, luxury art, bronze sculptures, wood carvings, marble art, exclusive collection, museum grade",
-    "logo": "/src/assets/logo.png",
+    "logo": "@/assets/logo.png",
     "favicon": "/favicon.ico"
   },
   "navigation": [
@@ -19,13 +19,13 @@
       "subtitle": "Curated Indian Sculptures of Exceptional Merit",
       "description": "We specialize in sourcing and curating museum-quality Indian sculptures, each piece representing centuries of artistic tradition and unparalleled craftsmanship.",
       "cta": "Contact Us to View Our Collection",
-      "background": "/src/assets/hero-bg.jpg",
+      "background": "@/assets/hero-bg.jpg",
       "alt": "Elegant Indian sculpture gallery interior with dramatic lighting"
     },
     "introduction": {
       "title": "Where Art Meets Legacy",
       "content": "For over two decades, Aurelia Tradisia has been the premier destination for collectors seeking authentic Indian sculptures. Our curated collection spans ancient traditions to contemporary masters, each piece authenticated and sourced directly from renowned artisans.",
-      "image": "/src/assets/gallery-interior.jpg",
+      "image": "@/assets/gallery-interior.jpg",
       "alt": "Luxurious gallery interior showcasing curated Indian sculptures"
     },
     "exclusivity": {
@@ -43,26 +43,26 @@
       "name": "Jyotirmoy Barman",
       "title": "Founder & Curator",
       "description": "Jyotirmoy Barman, founder of Aurelia Tradisia, has always been passionate about Indian art. Seeing the incredible craftsmanship of local artists often overlooked, he decided to create a platform that celebrates their talent and brings their work to discerning collectors worldwide.",
-      "image": "/src/assets/founder-portrait.jpg",
+      "image": "@/assets/founder-photo.jpg",
       "alt": "Jyotirmoy Barman, founder of Aurelia Tradisia, in his curated gallery space"
     },
     "mission": [
       {
         "title": "The Inspiration",
         "description": "India is home to thousands of skilled sculptors producing world-class work. Yet, most artists struggle to reach a wider audience or receive fair compensation. We wanted to change that.",
-        "image": "/src/assets/artisan-workshop.jpg",
+        "image": "@/assets/artisan-workshop.jpg",
         "alt": "Traditional Indian sculptor at work creating intricate bronze sculpture"
       },
       {
         "title": "The Start of Aurelia Tradisia",
         "description": "We started Aurelia Tradisia to bridge local artistry with national and global collectors. By curating over a thousand exceptional sculptures across categories — Indian deities, modern art, abstract, and various sizes — we give these masterpieces the platform they deserve.",
-        "image": "/src/assets/curated-collection.jpg",
+        "image": "@/assets/curated-collection.jpg",
         "alt": "Carefully curated collection of diverse Indian sculptures in elegant display"
       },
       {
         "title": "Our Commitment",
         "description": "Every piece in our collection is carefully selected for craftsmanship, authenticity, and artistic value. We strive to honor the artist, preserve India's cultural heritage, and offer collectors a truly unique experience.",
-        "image": "/src/assets/authentication-process.jpg",
+        "image": "@/assets/authentication-process.jpg",
         "alt": "Expert examination and authentication of traditional Indian sculpture"
       }
     ]
@@ -133,8 +133,8 @@
     "social": [
       { "platform": "Instagram", "url": "#", "username": "@Aurelia Tradisia" },
       { "platform": "Facebook", "url": "https://www.facebook.com/people/Aurelia-Tradisia/61579398465150/", "username": "Join Our Facebook Page" },
-      { "platform": "LinkedIn", "url": "#", "username": "join Us On LinkedIn" },
-      { "platform": "WhatsApp", "url": "https://wa.me/+919678718311", "username": "Whatsapp Us " }
+      { "platform": "LinkedIn", "url": "https://www.linkedin.com/in/aureliatradisia-ab5b66374", "username": "Join Us On LinkedIn" },
+      { "platform": "WhatsApp", "url": "https://wa.me/+919678718311", "username": "WhatsApp Us" }
     ]
   },
   "footer": {

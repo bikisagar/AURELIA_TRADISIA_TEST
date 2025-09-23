@@ -4,6 +4,8 @@ import Footer from '@/components/Layout/Footer';
 import content from '@/data/content.json';
 import founderPhoto from '@/assets/founder-photo.jpg';
 import workshopPhoto from '@/assets/workshop-photo.jpg';
+import curatedCollection from '@/assets/curated-collection.jpg';
+import authenticationProcess from '@/assets/authentication-process.jpg';
 
 const About = () => {
   useEffect(() => {
@@ -97,7 +99,10 @@ const About = () => {
                   <div className="w-full max-w-md lg:w-2/5">
                     <div className="aspect-[5/4] overflow-hidden rounded-none shadow-[var(--shadow-luxury)]">
                       <img 
-                        src={index === 0 ? workshopPhoto : item.image}
+                        src={index === 0 ? workshopPhoto : 
+                             index === 1 ? curatedCollection :
+                             index === 2 ? authenticationProcess : 
+                             workshopPhoto}
                         alt={item.alt}
                         className="w-full h-full object-cover"
                       />

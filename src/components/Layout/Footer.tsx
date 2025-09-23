@@ -39,6 +39,8 @@ const Footer = () => {
                 <a
                   key={social.platform}
                   href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center space-x-2 text-luxury-cream/80 hover:text-luxury-gold transition-colors duration-300"
                   aria-label={`Follow us on ${social.platform}`}
                 >
