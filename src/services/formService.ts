@@ -1,3 +1,5 @@
+import content from '../data/content.json';
+
 interface FormData {
   name: string;
   email: string;
@@ -5,31 +7,83 @@ interface FormData {
   reason: string;
 }
 
-export const submitToGoogleForm = async (data: FormData) => {
+export const submitToGoogleForm = async (data: FormData): Promise<boolean> => {
   try {
-    // Your Google Form URL
-    const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeH8JhWP41FW02JcISWoFPEBEprApYkdWxuuUYzqel-WvbgUQ/formResponse';
+    const FORM_SUBMISSION_URL = content.contact.form.submissionUrl;
     
-    // Map your form fields to Google Form fields
-    const formData = new URLSearchParams({
-      'entry.1842879221': data.name,     // Full Name
-      'entry.534710258': data.email,     // Email Address
-      'entry.1686697088': data.message,  // Message
-      'entry.1658962561': data.reason    // Reason for Contact
+    // Validate data
+    if (!data.name || !data.email || !data.message || !data.reason) {
+      console.error('Missing required form fields');
+      return false;
+    }
+
+    if (!FORM_SUBMISSION_URL) {
+      console.error('Form submission URL not configured');
+      return false;
+    }
+
+    // Convert to URL-encoded format (what Google Forms expects)
+    const params = new URLSearchParams();
+    params.append("Full Name", data.name.trim());
+    params.append("Email Address", data.email.trim());
+    params.append("Reason for Contact", data.reason.trim());
+    params.append("Message", data.message.trim());
+
+    console.log('Sending form data to:', FORM_SUBMISSION_URL);
+    console.log('Form fields:', {
+      name: data.name,
+      email: data.email,
+      reason: data.reason,
+      message: data.message
     });
 
-    const response = await fetch(GOOGLE_FORM_URL, {
+    const response = await fetch(FORM_SUBMISSION_URL, {
       method: 'POST',
       mode: 'no-cors',
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
+        'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: formData
+      body: params.toString()
     });
 
+    console.log('Form submitted successfully');
     return true;
   } catch (error) {
     console.error('Form submission error:', error);
     return false;
   }
-}
+};
+
+// Optional: Helper function to validate email format
+export const validateEmail = (email: string): boolean => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
+
+// Optional: Helper function to validate form data before submission
+export const validateFormData = (data: FormData): { valid: boolean; errors: string[] } => {
+  const errors: string[] = [];
+
+  if (!data.name || data.name.trim().length === 0) {
+    errors.push('Full name is required');
+  }
+
+  if (!data.email || data.email.trim().length === 0) {
+    errors.push('Email address is required');
+  } else if (!validateEmail(data.email)) {
+    errors.push('Please enter a valid email address');
+  }
+
+  if (!data.reason || data.reason.trim().length === 0) {
+    errors.push('Reason for contact is required');
+  }
+
+  if (!data.message || data.message.trim().length === 0) {
+    errors.push('Message is required');
+  }
+
+  return {
+    valid: errors.length === 0,
+    errors
+  };
+};

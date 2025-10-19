@@ -4,6 +4,7 @@ import Header from '@/components/Layout/Header';
 import Footer from '@/components/Layout/Footer';
 import { useToast } from '@/hooks/use-toast';
 import content from '@/data/content.json';
+import { submitToGoogleForm } from '@/services/formService';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -18,43 +19,33 @@ const Contact = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    try {
-      // Create a hidden form
-      const form = document.createElement('form');
-      form.method = 'POST';
-      form.action = 'https://docs.google.com/forms/d/e/1FAIpQLSeH8JhWP41FW02JcISWoFPEBEprApYkdWxuuUYzqel-WvbgUQ/formResponse';
-      form.target = '_blank'; // Prevents page redirect
-      
-      // Create form inputs with your Google Form field IDs
-      const formInputs = [
-        { name: 'entry.2012452737', value: formData.name },
-        { name: 'entry.1030138171', value: formData.email },
-        { name: 'entry.1637574195', value: formData.reason },
-        { name: 'entry.1743390555', value: formData.message }
-      ];
+    // Validate required fields
+    if (!formData.name || !formData.email || !formData.reason || !formData.message) {
+      toast({
+        title: "Error",
+        description: "Please fill in all required fields.",
+        variant: "destructive",
+      });
+      return;
+    }
 
-      // Add inputs to form
-      formInputs.forEach(input => {
-        const hiddenField = document.createElement('input');
-        hiddenField.type = 'hidden';
-        hiddenField.name = input.name;
-        hiddenField.value = input.value;
-        form.appendChild(hiddenField);
+    try {
+      // Show loading state
+      toast({
+        title: "Sending...",
+        description: "Please wait while we process your message."
       });
 
-      // Add form to document and submit
-      document.body.appendChild(form);
-      form.submit();
-      document.body.removeChild(form);
-
+      await submitToGoogleForm(formData);
+      
       // Show success message
       toast({
-        title: "Message Sent Successfully",
+        title: "Success!",
         description: content.contact.form.success,
-        duration: 5000,
+        variant: "success",
       });
 
       // Reset form
@@ -69,8 +60,7 @@ const Contact = () => {
       toast({
         title: "Error",
         description: content.contact.form.error,
-        duration: 5000,
-        variant: "destructive"
+        variant: "destructive",
       });
     }
   };

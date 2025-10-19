@@ -107,6 +107,7 @@
     "subtitle": "Begin Your Journey Into Exceptional Art",
     "description": "We invite you to discover our exclusive collection of Indian sculptures. Please contact us to arrange a private viewing or to discuss specific pieces that may interest you.",
     "form": {
+      "submissionUrl": "https://script.google.com/macros/s/AKfycbw2U-7C8U6MjLezfkKa2PlFmB7YxNMpAeelhxOb8-pGMrUbxmXjh8dxWxn-PW-HMALohQ/exec",
       "name": "Full Name",
       "email": "Email Address",
       "message": "Message",
